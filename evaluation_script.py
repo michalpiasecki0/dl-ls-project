@@ -1,5 +1,7 @@
 import sys
 
+import pandas as pd
+
 import torch
 import torch.nn as nn
 
@@ -23,5 +25,7 @@ if __name__ == "__main__":
     path_test = sys.argv[2]
 
     model = load_model(model_path)
+    data = pd.read_csv(path_test, delimiter='\t')
+
     evaluate(model, path_test)
     
